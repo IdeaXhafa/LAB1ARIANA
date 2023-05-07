@@ -2481,19 +2481,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Xeni\\.nuget\\packages\\": {}
+    "C:\\Users\\PC\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Xeni\\Desktop\\lab1\\back\\back\\back.csproj",
+      "projectUniqueName": "C:\\Users\\PC\\Desktop\\lab1\\LAB1ARIANA\\back\\back\\back.csproj",
       "projectName": "back",
-      "projectPath": "C:\\Users\\Xeni\\Desktop\\lab1\\back\\back\\back.csproj",
-      "packagesPath": "C:\\Users\\Xeni\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Xeni\\Desktop\\lab1\\back\\back\\obj\\",
+      "projectPath": "C:\\Users\\PC\\Desktop\\lab1\\LAB1ARIANA\\back\\back\\back.csproj",
+      "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\PC\\Desktop\\lab1\\LAB1ARIANA\\back\\back\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Xeni\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -2567,7 +2567,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.408\\RuntimeIdentifierGraph.json"
       }
     }
   }

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function CreateBook() {
   const [title, setTitle] = useState('');
@@ -24,24 +25,34 @@ function CreateBook() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Title:
-        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Author:
-        <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
-      </label>
-      <br />
-      <label>
-        Timestamp:
-        <input type="datetime" value={timestamp} onChange={(e) => setTimestamp(e.target.value)} />
-      </label>
-      <br />
-      <button type="submit">Create</button>
-    </form>
+    <div className="modal-dialog" style={{ width: 600}}>
+      <div className="modal-content">
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="modal-header">
+            <h4 className="modal-title">Shto Libër</h4>
+            <Link to="/books"><button type="button" className="close" data-dismiss="modal" aria-hidden="true" onclick="window.location='/books';">&times;</button></Link>
+          </div>
+          <div className="modal-body">
+            <div className="form-group">
+              <label>Titulli:</label>
+              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} />
+            </div>
+            <div className="form-group">
+              <label>Autori</label>
+              <input type="text" value={author} onChange={(e) => setAuthor(e.target.value)} />
+            </div>
+            <div className="form-group">
+              <label>Timestamp</label>
+              <input type="datetime" value={timestamp} onChange={(e) => setTimestamp(e.target.value)} />
+            </div>
+          </div>
+          <div className="modal-footer">
+            <Link to="/books"><input type="button" className="btn btn-dark" value="Anulo" /></Link>
+            <input type="submit" value="Create" className="btn btn-primary float-right" />
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
 

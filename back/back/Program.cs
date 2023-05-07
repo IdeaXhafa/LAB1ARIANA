@@ -13,16 +13,6 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-// Configure the HTTP request pipeline.
-var app = builder.Build();
-
-if (app.Environment.IsDevelopment())
-{
-    app.UseDeveloperExceptionPage();
-}
-
-app.UseHttpsRedirection();
-
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder => builder
@@ -32,6 +22,16 @@ builder.Services.AddCors(options =>
     .WithExposedHeaders("WWW-Authenticate")
     .WithOrigins("http://localhost:3000"));
 });
+
+// Configure the HTTP request pipeline.
+var app = builder.Build();
+
+if (app.Environment.IsDevelopment())
+{
+    app.UseDeveloperExceptionPage();
+}
+
+app.UseHttpsRedirection();
 
 app.UseRouting();
 

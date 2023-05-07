@@ -10,6 +10,7 @@ namespace back.Data
         }
 
         public DbSet<Book> Books { get; set; }
+        public DbSet<Bestseller> Bestsellers { get; set; }
     
     }
 }

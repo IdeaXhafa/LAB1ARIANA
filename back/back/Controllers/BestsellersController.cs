@@ -7,11 +7,11 @@ namespace back.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
-    public class BookController : ControllerBase
+    public class BestsellersController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
 
-        public BookController(ApplicationDbContext context)
+        public BestsellersController(ApplicationDbContext context)
         {
             _context = context;
         }
@@ -19,22 +19,22 @@ namespace back.Controllers
         [HttpGet]
         public IActionResult Get()
         {
-            var books = _context.Books.ToList();
+            var books = _context.Bestsellers.ToList();
             return Ok(books);
         }
 
         [HttpPost]
-        public IActionResult Post([FromBody] Book book)
+        public IActionResult Post([FromBody] Bestseller book)
         {
-            _context.Books.Add(book);
+            _context.Bestsellers.Add(book);
             _context.SaveChanges();
             return Ok();
         }
 
         [HttpPut("{id}")]
-        public IActionResult Put(int id, [FromBody] Book book)
+        public IActionResult Put(int id, [FromBody] Bestseller book)
         {
-            var existingBook = _context.Books.FirstOrDefault(b => b.Id == id);
+            var existingBook = _context.Bestsellers.FirstOrDefault(b => b.Id == id);
             if (existingBook == null)
             {
                 return NotFound();
@@ -42,7 +42,8 @@ namespace back.Controllers
 
             existingBook.Title = book.Title;
             existingBook.Author = book.Author;
-            existingBook.Timestamp = book.Timestamp;
+            existingBook.Rating = book.Rating;
+            existingBook.Year = book.Year;
 
             _context.SaveChanges();
 
@@ -52,13 +53,13 @@ namespace back.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            var existingBook = _context.Books.FirstOrDefault(b => b.Id == id);
+            var existingBook = _context.Bestsellers.FirstOrDefault(b => b.Id == id);
             if (existingBook == null)
             {
                 return NotFound();
             }
 
-            _context.Books.Remove(existingBook);
+            _context.Bestsellers.Remove(existingBook);
             _context.SaveChanges();
 
             return Ok();
